@@ -4,13 +4,18 @@ import Saludo from "./components/Saludo";
 import { Component } from "react";
 
 class App extends Component {
-/*   constructor(props) {
-    super(props)
-    this.doSomething = this.doSomething.bind(this)
-  } */
+  constructor(props) {
+    super(props);
+    this.state={
+      contador:0
+    }
+  }
 
-  doSomething(){
-    alert("Funciona");
+  incremento(){
+    this.setState({contador:this.state.contador+1});
+  }
+  decremento(){
+    this.setState({contador:this.state.contador-1});
   }
   render() {
     return (
@@ -20,20 +25,11 @@ class App extends Component {
           <h3 className="App-title">Welcome to React</h3>
         </header>
         <section>
-          <Saludo nombre="Montse" clickHandler={this.doSomething.bind(this)}/>          
+          <Saludo contador={this.state.contador} incrementHandler={this.incremento.bind(this)} decrementHandler={this.decremento.bind(this)}/>
         </section>
       </div>
     );
   }
 }
 
-/* class doSomething extends Component{
-  render(){
-    return(
-      <div>
-        Salta el evento
-      </div>
-    );
-  }
-} */
 export default App;

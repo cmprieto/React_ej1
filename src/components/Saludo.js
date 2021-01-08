@@ -3,11 +3,10 @@ class Saludo extends Component {
   render() {
     return (
       <div>
-        <h2>¡Hola {this.props.nombre}! </h2>
-        {/* <button onClick={() => alert("Funciona")}>Haz click</button> */}
-         
-        <button onClick={this.props.clickHandler}>Haz click</button>
-         <br/><br/><br/>
+         <h3>El valor del contador es:  {this.props.contador}</h3>
+         <button onClick={this.props.incrementHandler}>Incremento</button>
+         <button onClick={this.props.decrementHandler}>Decremento</button>
+        <br/><br/><br/>
       </div>
     );
   }
